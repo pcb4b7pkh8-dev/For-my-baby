@@ -1,0 +1,2049 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+
+<meta name="theme-color" content="#17132f">
+
+<title>To My Starlight ♡</title>
+
+<style>
+
+:root{
+
+--night:#17132f;
+
+--lav:#c9b7ff;
+
+--pink:#f3c7e7;
+
+--white:#fff8ff;
+
+--muted:#c9c0e7;
+
+}
+
+*{box-sizing:border-box}
+
+html{
+
+scroll-behavior:smooth;
+
+background:var(--night);
+
+}
+
+body{
+
+margin:0;
+
+min-height:100%;
+
+background:var(--night);
+
+color:var(--white);
+
+font-family:Georgia,"Times New Roman",serif;
+
+overflow-x:hidden;
+
+}
+
+button{font:inherit}
+
+/* GALAXY BACKGROUND */
+
+.sky{
+
+position:fixed;
+
+inset:0;
+
+z-index:0;
+
+overflow:hidden;
+
+pointer-events:none;
+
+background:radial-gradient(
+
+ellipse at 50% 110%,
+
+#514078 0%,
+
+#292044 42%,
+
+#17132f 78%
+
+);
+
+}
+
+#stars{
+
+position:absolute;
+
+inset:0;
+
+width:100%;
+
+height:100%;
+
+}
+
+.nebula{
+
+position:absolute;
+
+width:65vw;
+
+height:65vw;
+
+max-width:700px;
+
+max-height:700px;
+
+border-radius:50%;
+
+filter:blur(70px);
+
+opacity:.14;
+
+animation:drift 18s ease-in-out infinite alternate;
+
+}
+
+.nebula.one{
+
+background:#c6a0ff;
+
+left:-20%;
+
+top:10%;
+
+}
+
+.nebula.two{
+
+background:#f29bce;
+
+right:-25%;
+
+bottom:-20%;
+
+animation-delay:-8s;
+
+}
+
+@keyframes drift{
+
+to{transform:translate(12vw,-8vh) scale(1.25)}
+
+}
+
+.shooting{
+
+position:absolute;
+
+width:130px;
+
+height:1px;
+
+background:linear-gradient(
+
+90deg,transparent,#fff,#d9c7ff,transparent
+
+);
+
+transform:rotate(-28deg);
+
+opacity:0;
+
+animation:shoot 7s linear infinite;
+
+}
+
+@keyframes shoot{
+
+0%,75%{
+
+opacity:0;
+
+transform:translate(0,0) rotate(-28deg);
+
+}
+
+78%{opacity:1}
+
+88%{
+
+opacity:0;
+
+transform:translate(-230px,115px) rotate(-28deg);
+
+}
+
+100%{opacity:0}
+
+}
+
+/* HEADER */
+
+.topbar{
+
+position:fixed;
+
+z-index:20;
+
+top:0;
+
+left:0;
+
+right:0;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:14px 18px;
+
+padding-top:max(14px,env(safe-area-inset-top));
+
+background:#17132fb8;
+
+backdrop-filter:blur(14px);
+
+border-bottom:1px solid #ffffff18;
+
+}
+
+.brand{
+
+color:var(--pink);
+
+font-size:16px;
+
+}
+
+.count{
+
+font:12px Arial,sans-serif;
+
+color:var(--muted);
+
+letter-spacing:1px;
+
+}
+
+/* PAGES */
+
+.page{
+
+display:none;
+
+position:relative;
+
+z-index:1;
+
+min-height:100svh;
+
+padding:90px 20px 110px;
+
+align-items:center;
+
+justify-content:center;
+
+}
+
+.page.active{
+
+display:flex;
+
+animation:fade .7s ease both;
+
+}
+
+@keyframes fade{
+
+from{opacity:0;transform:translateY(14px)}
+
+to{opacity:1;transform:none}
+
+}
+
+.content{
+
+width:min(790px,100%);
+
+text-align:center;
+
+margin:auto;
+
+}
+
+.eyebrow{
+
+font:700 10px Arial,sans-serif;
+
+letter-spacing:3px;
+
+text-transform:uppercase;
+
+color:var(--lav);
+
+}
+
+h1{
+
+font-size:clamp(43px,10vw,82px);
+
+font-weight:400;
+
+line-height:1.02;
+
+color:#fff3ff;
+
+margin:18px 0;
+
+text-shadow:0 0 30px #d5baff55;
+
+}
+
+h2{
+
+font-size:clamp(32px,7vw,55px);
+
+font-weight:400;
+
+line-height:1.1;
+
+color:#f0ddff;
+
+margin:14px 0 18px;
+
+}
+
+p{
+
+font-size:clamp(16px,3.6vw,20px);
+
+line-height:1.75;
+
+color:#e5dcf8;
+
+max-width:650px;
+
+margin:14px auto;
+
+}
+
+.muted{
+
+font:12px Arial,sans-serif;
+
+letter-spacing:1px;
+
+color:#b9aed9;
+
+}
+
+/* BUTTONS */
+
+.btn{
+
+border:1px solid #ffffff28;
+
+border-radius:999px;
+
+padding:13px 22px;
+
+background:linear-gradient(135deg,#b79aff,#8b72c8);
+
+color:white;
+
+box-shadow:0 8px 28px #9a7de633;
+
+cursor:pointer;
+
+margin:8px 5px;
+
+transition:.22s;
+
+}
+
+.btn:hover{
+
+transform:translateY(-3px);
+
+filter:brightness(1.1);
+
+}
+
+.btn.ghost{
+
+background:#ffffff0c;
+
+color:#f1e7ff;
+
+}
+
+/* GLASS CARDS */
+
+.glass{
+
+background:linear-gradient(145deg,#ffffff14,#ffffff08);
+
+border:1px solid #ffffff25;
+
+border-radius:26px;
+
+padding:24px;
+
+box-shadow:0 20px 70px #08061655;
+
+backdrop-filter:blur(12px);
+
+max-width:660px;
+
+margin:18px auto;
+
+}
+
+/* FLOATING ICONS */
+
+.orb{
+
+font-size:clamp(58px,14vw,105px);
+
+display:inline-block;
+
+filter:drop-shadow(0 0 22px #d6baff77);
+
+animation:float 4s ease-in-out infinite;
+
+}
+
+@keyframes float{
+
+50%{transform:translateY(-12px) rotate(4deg)}
+
+}
+
+/* GAME GRID */
+
+.grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,minmax(0,1fr));
+
+gap:12px;
+
+max-width:650px;
+
+margin:22px auto;
+
+}
+
+.choice{
+
+border:1px solid #ffffff25;
+
+background:#ffffff0d;
+
+color:#f9efff;
+
+border-radius:20px;
+
+padding:18px 10px;
+
+cursor:pointer;
+
+line-height:1.5;
+
+transition:.2s;
+
+}
+
+.choice:hover,.choice:focus{
+
+background:#c2a8ff2b;
+
+transform:translateY(-3px);
+
+outline:none;
+
+}
+
+.choice b{
+
+display:block;
+
+font-size:28px;
+
+margin-bottom:6px;
+
+}
+
+/* NAVIGATION */
+
+.navbottom{
+
+position:fixed;
+
+z-index:20;
+
+bottom:0;
+
+left:0;
+
+right:0;
+
+padding:12px 16px max(15px,env(safe-area-inset-bottom));
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:7px;
+
+background:linear-gradient(0deg,#17132fee,#17132f00);
+
+}
+
+.dot{
+
+width:7px;
+
+height:7px;
+
+border:0;
+
+border-radius:20px;
+
+background:#ffffff48;
+
+padding:0;
+
+cursor:pointer;
+
+}
+
+.dot.active{
+
+width:23px;
+
+background:#d8c5ff;
+
+}
+
+/* PHOTO GALLERY */
+
+.photo-grid{
+
+display:grid;
+
+grid-template-columns:repeat(3,minmax(0,1fr));
+
+gap:12px;
+
+margin:22px auto;
+
+max-width:690px;
+
+}
+
+.photo{
+
+min-width:0;
+
+background:#fff;
+
+padding:8px 8px 28px;
+
+border-radius:5px;
+
+box-shadow:0 10px 30px #08061666;
+
+transform:rotate(-2deg);
+
+color:#4c3b64;
+
+position:relative;
+
+}
+
+.photo:nth-child(2){
+
+transform:rotate(2.5deg) translateY(12px);
+
+}
+
+.photo:nth-child(3){
+
+transform:rotate(-1deg) translateY(-5px);
+
+}
+
+.photo img{
+
+width:100%;
+
+aspect-ratio:3/4;
+
+object-fit:cover;
+
+display:block;
+
+background:linear-gradient(145deg,#e9ddff,#f7dff0);
+
+}
+
+.photo label{
+
+display:block;
+
+font:12px Georgia,serif;
+
+padding-top:8px;
+
+cursor:pointer;
+
+}
+
+.photo input{display:none}
+
+.photo .placeholder{
+
+aspect-ratio:3/4;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+flex-direction:column;
+
+background:linear-gradient(145deg,#e7dcff,#f8dff0);
+
+color:#695783;
+
+font-size:30px;
+
+}
+
+.photo .placeholder small{
+
+font:10px Arial,sans-serif;
+
+margin-top:8px;
+
+letter-spacing:1px;
+
+}
+
+.caption{
+
+font:11px Arial,sans-serif;
+
+color:#d2c6eb;
+
+margin-top:8px;
+
+}
+
+/* GAME PROGRESS */
+
+.progress{
+
+height:7px;
+
+border-radius:10px;
+
+background:#ffffff20;
+
+overflow:hidden;
+
+margin:14px auto;
+
+max-width:340px;
+
+}
+
+.progress span{
+
+display:block;
+
+height:100%;
+
+width:0;
+
+background:linear-gradient(90deg,#e5c7ff,#ffcae8);
+
+transition:width .3s;
+
+}
+
+/* SECRET MESSAGE */
+
+.scratchbox{
+
+max-width:480px;
+
+margin:20px auto;
+
+padding:25px;
+
+border-radius:22px;
+
+background:#ffffff12;
+
+border:1px solid #ffffff30;
+
+cursor:pointer;
+
+user-select:none;
+
+}
+
+.scratchbox .hiddenmessage{
+
+display:none;
+
+color:#ffe6f6;
+
+font-size:21px;
+
+line-height:1.65;
+
+}
+
+.scratchbox.revealed .cover{display:none}
+
+.scratchbox.revealed .hiddenmessage{display:block}
+
+/* FLOATING HEARTS */
+
+#heartfield{
+
+position:fixed;
+
+inset:0;
+
+pointer-events:none;
+
+z-index:30;
+
+overflow:hidden;
+
+}
+
+.floaty{
+
+position:absolute;
+
+bottom:-30px;
+
+animation:rise 5s linear forwards;
+
+font-size:20px;
+
+}
+
+@keyframes rise{
+
+to{
+
+transform:translateY(-110vh) rotate(35deg);
+
+opacity:0;
+
+}
+
+}
+
+footer{
+
+font:11px Arial,sans-serif;
+
+color:#a99bc9;
+
+margin-top:24px;
+
+}
+
+/* HEART GAME */
+
+#catchArea{
+
+height:250px;
+
+max-width:520px;
+
+margin:18px auto;
+
+position:relative;
+
+overflow:hidden;
+
+border:1px solid #ffffff25;
+
+border-radius:22px;
+
+background:#ffffff0b;
+
+}
+
+.catch{
+
+position:absolute;
+
+border:0;
+
+background:transparent;
+
+font-size:31px;
+
+cursor:pointer;
+
+animation:bob 1.8s ease-in-out infinite alternate;
+
+padding:8px;
+
+touch-action:manipulation;
+
+}
+
+@keyframes bob{
+
+to{transform:translateY(-8px) rotate(12deg)}
+
+}
+
+/* FINAL LETTER */
+
+#secret{display:none}
+
+.secret-open #secret{
+
+display:block;
+
+animation:fade .7s ease;
+
+}
+
+/* MUSIC */
+
+.music{
+
+position:fixed;
+
+z-index:25;
+
+right:14px;
+
+bottom:67px;
+
+border:1px solid #ffffff30;
+
+background:#251e45;
+
+color:#f7eaff;
+
+border-radius:30px;
+
+padding:10px 13px;
+
+font:11px Arial,sans-serif;
+
+cursor:pointer;
+
+}
+
+/* MOBILE */
+
+@media(max-width:520px){
+
+.photo-grid{gap:7px}
+
+.photo{padding:5px 5px 22px}
+
+.photo label{font-size:10px}
+
+.glass{padding:20px 16px}
+
+.page{
+
+padding-left:16px;
+
+padding-right:16px;
+
+}
+
+}
+
+@media(prefers-reduced-motion:reduce){
+
+*,*::before,*::after{
+
+animation-duration:.01ms!important;
+
+animation-iteration-count:1!important;
+
+scroll-behavior:auto!important;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="sky" aria-hidden="true">
+
+<canvas id="stars"></canvas>
+
+<div class="nebula one"></div>
+
+<div class="nebula two"></div>
+
+<div class="shooting" style="top:15%;left:85%"></div>
+
+<div class="shooting" style="top:52%;left:65%"></div>
+
+<div class="shooting" style="top:70%;left:30%"></div>
+
+</div>
+
+<header class="topbar">
+
+<div class="brand">✦ a universe for you</div>
+
+<div class="count" id="count">01 / 08</div>
+
+</header>
+
+<div id="heartfield" aria-hidden="true"></div>
+
+<!-- PAGE 1 -->
+
+<section class="page active">
+
+<div class="content">
+
+<div class="eyebrow">
+
+A little stardust, made just for you
+
+</div>
+
+<div class="orb">🌙</div>
+
+<h1>To My Starlight</h1>
+
+<p>
+
+Some people make the world feel brighter just by being in it.
+
+This little universe is here to celebrate one of them —
+
+<em>you</em>.
+
+</p>
+
+<p class="muted">
+
+Eight little chapters. One very special girl.
+
+</p>
+
+<button class="btn" onclick="go(1)">
+
+Enter your universe babyyy ✨
+
+</button>
+
+<footer>just for you ♡</footer>
+
+</div>
+
+</section>
+
+<!-- PAGE 2 -->
+
+<section class="page">
+
+<div class="content">
+
+<div class="eyebrow">Chapter 02 · The crown</div>
+
+<div class="orb">👑</div>
+
+<h2>A crown that needs no gold</h2>
+
+<div class="glass">
+
+<p style="font-size:clamp(22px,5vw,30px);color:#f4ddff">
+
+Your magic isn't in a crown.
+
+It's in the way you are — your warmth, your grace,
+
+your laughter, and all the little things that make you wonderfully you 🥹💘
+
+</p>
+
+</div>
+
+<p>
+
+You don't have to be perfect to be precious.
+
+You only have to be yourself.
+
+</p>
+
+<button class="btn" onclick="go(2)">
+
+See your little memories →
+
+</button>
+
+</div>
+
+</section>
+
+<!-- PAGE 3 -->
+
+<section class="page">
+
+<div class="content">
+
+<div class="eyebrow">Chapter 03 · A little gallery</div>
+
+<h2>My favourite kind of view</h2>
+
+<p>Three little frames waiting for some favourite moments. 🥹</p>
+
+<div class="photo-grid">
+
+<div class="photo">
+
+<label for="file1">
+
+<div class="placeholder" id="ph1">
+
+🌸<small>ADD PHOTO 01</small>
+
+</div>
+
+<img id="img1" alt="Memory one" style="display:none">
+
+</label>
+
+<label for="file1">A lovely moment ♡</label>
+
+<input id="file1" type="file" accept="image/*" onchange="loadPhoto(event,1)">
+
+</div>
+
+<div class="photo">
+
+<label for="file2">
+
+<div class="placeholder" id="ph2">
+
+🦋<small>ADD PHOTO 02</small>
+
+</div>
+
+<img id="img2" alt="Memory two" style="display:none">
+
+</label>
+
+<label for="file2">That beautiful smile</label>
+
+<input id="file2" type="file" accept="image/*" onchange="loadPhoto(event,2)">
+
+</div>
+
+<div class="photo">
+
+<label for="file3">
+
+<div class="placeholder" id="ph3">
+
+🌙<small>ADD PHOTO 03</small>
+
+</div>
+
+<img id="img3" alt="Memory three" style="display:none">
+
+</label>
+
+<label for="file3">A moment to keep</label>
+
+<input id="file3" type="file" accept="image/*" onchange="loadPhoto(event,3)">
+
+</div>
+
+</div>
+
+<p class="caption">
+
+Choose photos before sharing.
+
+For them to appear for your girlfriend too,
+
+upload the image files with the website.
+
+</p>
+
+<button class="btn" onclick="go(3)">
+
+A little game awaits 🎮
+
+</button>
+
+</div>
+
+</section>
+
+<!-- PAGE 4 -->
+
+<section class="page">
+
+<div class="content">
+
+<div class="eyebrow">Chapter 04 · A tiny game</div>
+
+<h2>Catch the stardust 💜</h2>
+
+<p>
+
+Tap the floating hearts and collect wishes.
+
+Every wish is yours.
+
+</p>
+
+<div class="glass">
+
+<div style="font-size:13px;color:#d8c7ff">
+
+WISHES COLLECTED
+
+</div>
+
+<div id="score" style="font-size:42px;margin:7px">
+
+0 / 7
+
+</div>
+
+<div class="progress">
+
+<span id="bar"></span>
+
+</div>
+
+<div id="catchArea"></div>
+
+<div id="gameMsg" class="muted">
+
+Ready when you are, princess.
+
+</div>
+
+</div>
+
+<button class="btn ghost" onclick="resetGame()">
+
+Play again ↻
+
+</button>
+
+<button class="btn" onclick="go(4)">
+
+Next surprise →
+
+</button>
+
+</div>
+
+</section>
+
+<!-- PAGE 5 -->
+
+<section class="page">
+
+<div class="content">
+
+<div class="eyebrow">Chapter 05 · A secret compliment</div>
+
+<h2>A little note, hidden for you</h2>
+
+<p>
+
+Tap the stardust card to reveal what I hope you always remember.
+
+</p>
+
+<div class="scratchbox" id="scratch"
+
+onclick="this.classList.add('revealed');burst()">
+
+<div class="cover">
+
+<div class="orb" style="font-size:48px">✨</div>
+
+<p style="color:#f2ddff">
+
+Tap to reveal your secret note
+
+</p>
+
+<span class="muted">✦ ✦ ✦</span>
+
+</div>
+
+<div class="hiddenmessage">
+
+You are lovely beyond what a picture can show.
+
+I may not always find the perfect words to express what I feel,
+
+and sometimes I might fail to show you just how much you mean to me.
+
+I wish you could see yourself through my eyes, even for a moment.
+
+You would understand why your smile feels so precious to me,
+
+why your little habits make me fall for you all over again,
+
+and why even the simplest moments with you become memories
+
+I want to keep forever.
+
+I LOVE YOU, SWEETHEART ❤️
+
+</div>
+
+</div>
+
+<button class="btn" onclick="go(5)">
+
+A wish for you →
+
+</button>
+
+</div>
+
+</section>
+
+<!-- PAGE 6 -->
+
+<section class="page">
+
+<div class="content">
+
+<div class="eyebrow">Chapter 06 · Your royal title</div>
+
+<h2>Choose your kind of magic</h2>
+
+<p>Which little universe feels most like you?</p>
+
+<div class="grid">
+
+<button class="choice"
+
+onclick="royal('The Moonlight Princess',
+
+'If the moon could ever feel jealous, it would be of you. It spends every night trying to make the darkness beautiful, while you manage to brighten an entire world just by being yourself. Your beauty has its own quiet magic. 🌙')">
+
+<b>🌙</b>Moonlight
+
+</button>
+
+<button class="choice"
+
+onclick="royal('The Garden Queen',
+
+'If I could turn every beautiful flower into a compliment, I would still run out of flowers before I could describe you. You make ordinary moments feel like spring. 🌷')">
+
+<b>🌷</b>Flower garden
+
+</button>
+
+<button class="choice"
+
+onclick="royal('The Starlight Empress',
+
+'I was trying to count the stars in the sky, but then I remembered I already found my favourite star. 👀✨')">
+
+<b>✨</b>Starlight
+
+</button>
+
+<button class="choice"
+
+onclick="royal('The Butterfly Duchess',
+
+'If butterflies had a favourite person, I am pretty sure they would choose you too. 🦋')">
+
+<b>🦋</b>Butterflies
+
+</button>
+
+</div>
+
+<div class="glass" id="royalResult" aria-live="polite">
+
+Your royal title is waiting…
+
+</div>
+
+<button class="btn" onclick="go(6)">
+
+Read my wish →
+
+</button>
+
+</div>
+
+</section>
+
+<!-- PAGE 7 -->
+
+<section class="page">
+
+<div class="content">
+
+<div class="eyebrow">
+
+Chapter 07 · A wish beneath the stars
+
+</div>
+
+<div class="orb">🌠</div>
+
+<h2>May life be kind to you</h2>
+
+<div class="glass">
+
+<p style="font-size:clamp(22px,5vw,30px);color:#f4ddff">
+
+May your heart find peace,
+
+your dreams find open doors,
+
+and your days hold more laughter than worry.
+
+</p>
+
+</div>
+
+<p>
+
+May you always feel seen, respected, encouraged, and loved.
+
+Keep growing into every beautiful thing you hope to become.
+
+</p>
+
+<button class="btn" onclick="go(7)">
+
+Open the final secret 💌
+
+</button>
+
+</div>
+
+</section>
+
+<!-- PAGE 8 -->
+
+<section class="page" id="finalPage">
+
+<div class="content">
+
+<div class="eyebrow">Chapter 08 · Just for you</div>
+
+<div class="orb">💌</div>
+
+<h1>Happy Princess Day</h1>
+
+<p>
+
+There is one last little message, tucked away just for you.
+
+</p>
+
+<button class="btn" id="unlock"
+
+onclick="
+
+document.getElementById('finalPage').classList.add('secret-open');
+
+this.textContent='Your letter is open ♡';
+
+burst();
+
+">
+
+Unlock your secret letter
+
+</button>
+
+<div class="glass" id="secret">
+
+<p style="text-align:left;color:#f4eaff">
+
+My little baby,<br><br>
+
+I hope you never forget how much you matter.
+
+I adore the little details that make you who you are —
+
+your smile, your sweetness, your strength, your poise,
+
+and all the tiny things you may not even notice about yourself.<br><br>
+
+I wish ami tomar sathe thakte partam tomar birthday te and ajke.
+
+Yes, I am far away from you, but still you are the closest one, babu.<br><br>
+
+I miss you every day and even in the smallest everyday moments.
+
+I don't know how to explain it, but I love youuuu the mostttttttt.<br><br>
+
+Thank you for being you and being yourself, jaan.
+
+This little universe is only a small reminder
+
+that I should celebrate you, my princess,
+
+today and on all the ordinary days too.<br><br>
+
+<span style="color:#f4c9ed">
+
+I love you, baccha.
+
+With all my love, always and forever. ♡
+
+</span>
+
+</p>
+
+</div>
+
+<button class="btn ghost" onclick="burst()">
+
+Send more stardust ✨
+
+</button>
+
+<footer>
+
+End of this little universe · never the end of the wishes ♡
+
+</footer>
+
+</div>
+
+</section>
+
+<nav class="navbottom" id="dots"
+
+aria-label="Page navigation"></nav>
+
+<button class="music" id="musicBtn"
+
+onclick="toggleMusic()">
+
+♫ Play soft music
+
+</button>
+
+<script>
+
+"use strict";
+
+/* STARFIELD */
+
+const canvas=document.getElementById("stars");
+
+const ctx=canvas.getContext("2d");
+
+let stars=[];
+
+function sizeSky(){
+
+const dpr=Math.min(window.devicePixelRatio||1,2);
+
+canvas.width=Math.floor(innerWidth*dpr);
+
+canvas.height=Math.floor(innerHeight*dpr);
+
+ctx.setTransform(dpr,0,0,dpr,0,0);
+
+stars=Array.from({
+
+length:Math.min(150,Math.floor(innerWidth/5))
+
+},()=>({
+
+x:Math.random()*innerWidth,
+
+y:Math.random()*innerHeight,
+
+r:Math.random()*1.5+.3,
+
+a:Math.random(),
+
+s:Math.random()*.012+.003
+
+}));
+
+}
+
+function drawSky(){
+
+ctx.clearRect(0,0,innerWidth,innerHeight);
+
+for(const s of stars){
+
+s.a+=s.s;
+
+if(s.a>1||s.a<.15){
+
+s.s*=-1;
+
+}
+
+ctx.beginPath();
+
+ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
+
+ctx.fillStyle=`rgba(255,245,255,${s.a})`;
+
+ctx.fill();
+
+}
+
+requestAnimationFrame(drawSky);
+
+}
+
+addEventListener("resize",sizeSky);
+
+sizeSky();
+
+drawSky();
+
+/* PAGE NAVIGATION */
+
+const pages=[...document.querySelectorAll(".page")];
+
+const dots=document.getElementById("dots");
+
+let current=0;
+
+pages.forEach((_,i)=>{
+
+const d=document.createElement("button");
+
+d.className="dot"+(!i?" active":"");
+
+d.type="button";
+
+d.title="Page "+(i+1);
+
+d.setAttribute(
+
+"aria-label",
+
+"Go to page "+(i+1)
+
+);
+
+d.addEventListener("click",()=>go(i));
+
+dots.appendChild(d);
+
+});
+
+function go(i){
+
+current=Math.max(
+
+0,
+
+Math.min(pages.length-1,i)
+
+);
+
+pages.forEach((p,n)=>{
+
+p.classList.toggle("active",n===current);
+
+});
+
+[...dots.children].forEach((d,n)=>{
+
+d.classList.toggle("active",n===current);
+
+});
+
+document.getElementById("count").textContent=
+
+String(current+1).padStart(2,"0")+" / 08";
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+}
+
+document.addEventListener("keydown",e=>{
+
+if(e.key==="ArrowRight")go(current+1);
+
+if(e.key==="ArrowLeft")go(current-1);
+
+});
+
+/* PHOTO GALLERY */
+
+const photoUrls=[];
+
+function loadPhoto(e,n){
+
+const file=e.target.files&&e.target.files[0];
+
+if(!file)return;
+
+if(!file.type.startsWith("image/")){
+
+alert("Please choose an image file.");
+
+return;
+
+}
+
+if(photoUrls[n]){
+
+URL.revokeObjectURL(photoUrls[n]);
+
+}
+
+const url=URL.createObjectURL(file);
+
+photoUrls[n]=url;
+
+const img=document.getElementById("img"+n);
+
+img.src=url;
+
+img.style.display="block";
+
+document.getElementById("ph"+n).style.display="none";
+
+}
+
+/* HEART CATCHING GAME */
+
+let score=0;
+
+let heartTimer=null;
+
+const heartSymbols=[
+
+"💜","💗","💕","✨","💖","🌟","🩷"
+
+];
+
+function spawnCatchHeart(){
+
+const area=document.getElementById("catchArea");
+
+if(score>=7)return;
+
+const heart=document.createElement("button");
+
+heart.className="catch";
+
+heart.type="button";
+
+heart.textContent=
+
+heartSymbols[
+
+Math.floor(Math.random()*heartSymbols.length)
+
+];
+
+heart.style.left=(8+Math.random()*78)+"%";
+
+heart.style.top=(8+Math.random()*70)+"%";
+
+heart.setAttribute(
+
+"aria-label",
+
+"Collect this wish"
+
+);
+
+heart.addEventListener(
+
+"click",
+
+()=>catchHeart(heart)
+
+);
+
+area.appendChild(heart);
+
+}
+
+function catchHeart(el){
+
+if(score>=7||!el.isConnected)return;
+
+el.remove();
+
+score++;
+
+document.getElementById("score").textContent=
+
+score+" / 7";
+
+document.getElementById("bar").style.width=
+
+(score/7*100)+"%";
+
+if(score>=7){
+
+clearTimeout(heartTimer);
+
+document.getElementById("catchArea").innerHTML="";
+
+document.getElementById("gameMsg").textContent=
+
+"Seven wishes collected! 👀💜✨";
+
+burst();
+
+}else{
+
+document.getElementById("gameMsg").textContent=
+
+"Another little wish is waiting for you! 💗";
+
+heartTimer=setTimeout(spawnCatchHeart,350);
+
+}
+
+}
+
+function resetGame(){
+
+clearTimeout(heartTimer);
+
+score=0;
+
+document.getElementById("score").textContent="0 / 7";
+
+document.getElementById("bar").style.width="0%";
+
+document.getElementById("gameMsg").textContent=
+
+"Ready when you are, princess. Collect all seven wishes!";
+
+document.getElementById("catchArea").innerHTML="";
+
+spawnCatchHeart();
+
+}
+
+spawnCatchHeart();
+
+/* PERSONALITY GAME */
+
+function royal(title,desc){
+
+const box=document.getElementById("royalResult");
+
+box.replaceChildren();
+
+const heading=document.createElement("div");
+
+heading.style.cssText=
+
+"font-size:26px;color:#f5dfff";
+
+heading.textContent=title;
+
+const p=document.createElement("p");
+
+p.textContent=desc;
+
+box.append(heading,p);
+
+burst();
+
+}
+
+/* FLOATING HEARTS */
+
+function burst(){
+
+const field=document.getElementById("heartfield");
+
+const symbols=[
+
+"💜","✨","🌸","💕","⭐","🦋"
+
+];
+
+for(let i=0;i<26;i++){
+
+const el=document.createElement("span");
+
+el.className="floaty";
+
+el.textContent=
+
+symbols[Math.floor(Math.random()*symbols.length)];
+
+el.style.left=Math.random()*100+"%";
+
+el.style.animationDelay=
+
+Math.random()*.8+"s";
+
+el.style.fontSize=
+
+(15+Math.random()*18)+"px";
+
+field.appendChild(el);
+
+setTimeout(()=>el.remove(),5600);
+
+}
+
+}
+
+/* ORIGINAL BACKGROUND MUSIC */
+
+let audio=null;
+
+let playing=false;
+
+let sequenceTimer=null;
+
+let noteIndex=0;
+
+const melody=[
+
+523.25,659.25,783.99,659.25,
+
+587.33,698.46,880,698.46,
+
+523.25,659.25,783.99,1046.5,
+
+880,783.99,659.25,587.33
+
+];
+
+async function toggleMusic(){
+
+if(playing){
+
+stopMusic();
+
+return;
+
+}
+
+try{
+
+const AC=
+
+window.AudioContext||window.webkitAudioContext;
+
+if(!AC){
+
+alert("Audio is not supported in this browser.");
+
+return;
+
+}
+
+audio=new AC();
+
+await audio.resume();
+
+playing=true;
+
+document.getElementById("musicBtn").textContent=
+
+"♫ Pause music";
+
+playNote();
+
+}catch(err){
+
+stopMusic();
+
+document.getElementById("musicBtn").textContent=
+
+"Music unavailable";
+
+}
+
+}
+
+function playNote(){
+
+if(!playing||!audio)return;
+
+const now=audio.currentTime;
+
+const freq=melody[noteIndex%melody.length];
+
+const osc=audio.createOscillator();
+
+const gain=audio.createGain();
+
+osc.type="sine";
+
+osc.frequency.setValueAtTime(freq,now);
+
+gain.gain.setValueAtTime(.0001,now);
+
+gain.gain.exponentialRampToValueAtTime(
+
+.045,now+.08
+
+);
+
+gain.gain.exponentialRampToValueAtTime(
+
+.0001,now+1.15
+
+);
+
+osc.connect(gain);
+
+gain.connect(audio.destination);
+
+osc.start(now);
+
+osc.stop(now+1.2);
+
+const bass=audio.createOscillator();
+
+const bg=audio.createGain();
+
+bass.type="sine";
+
+bass.frequency.value=freq/2;
+
+bg.gain.setValueAtTime(.0001,now);
+
+bg.gain.exponentialRampToValueAtTime(
+
+.012,now+.12
+
+);
+
+bg.gain.exponentialRampToValueAtTime(
+
+.0001,now+1.5
+
+);
+
+bass.connect(bg);
+
+bg.connect(audio.destination);
+
+bass.start(now);
+
+bass.stop(now+1.55);
+
+noteIndex++;
+
+sequenceTimer=setTimeout(playNote,780);
+
+}
+
+function stopMusic(){
+
+playing=false;
+
+if(sequenceTimer){
+
+clearTimeout(sequenceTimer);
+
+sequenceTimer=null;
+
+}
+
+if(audio){
+
+audio.close();
+
+audio=null;
+
+}
+
+document.getElementById("musicBtn").textContent=
+
+"♫ Play soft music";
+
+}
+
+/* STOP MUSIC WHEN TAB IS HIDDEN */
+
+document.addEventListener(
+
+"visibilitychange",
+
+()=>{
+
+if(document.hidden&&playing){
+
+stopMusic();
+
+}
+
+}
+
+);
+
+</script>
+
+</body>
+
+</html>
